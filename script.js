@@ -8,7 +8,7 @@ const scrollRevealOption = {
 }
 
 
-ScrollReveal().reveal('.section__continer h1',{
+ScrollReveal().reveal('.card ',{
   
      
      ...scrollRevealOption,
