@@ -132,11 +132,30 @@
 
    
   </section>
-
+   <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+            
+      
+ 
 
 <script>
 
-  var video = document.querySelectorAll('video')
+    const scrollRevealOption = {
+  
+  distance: "50px",
+  origin: "left",
+  duration: 2000,
+
+
+}
+
+
+ScrollReveal().reveal('.card',{
+  
+     
+     ...scrollRevealOption,
+});
+
+    var video = document.querySelectorAll('video')
   video.forEach(play => play.addEventListener('click',() => {play.classList.toggle('active');
   
   if(play.paused){
