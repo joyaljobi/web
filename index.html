@@ -143,13 +143,31 @@
 </footer>
   
   
-    
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
             
       
- <script src="script.js"></script>
+ <script>
+const scrollRevealOption = {
+  
+  distance: "50px",
+  origin: "bottom",
+  duration: 1000,
+
+
+}
+
+
+ScrollReveal().reveal('.card',{
+  
+     
+     ...scrollRevealOption,
+});
+
+     
+ </script>
    
   
-<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
   
   
 
