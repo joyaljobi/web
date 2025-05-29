@@ -21,7 +21,28 @@
     }
   }
 
- .social-icon {
+
+.social-bar-wrapper {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      z-index: 999;
+    }
+
+    .social-bar {
+      background-color: #ffffff;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+      padding: 10px 0;
+      display: flex;
+      justify-content: center;
+      transition: transform 0.3s ease;
+    }
+
+    .social-bar.hidden {
+      transform: translateY(100%);
+    }
+
+    .social-icon {
       width: 50px;
       height: 50px;
       border-radius: 50%;
@@ -40,14 +61,17 @@
       color: white;
     }
 
-    .social-bar {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background-color: transparent;
-      padding: 10px 0;
-      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-      z-index: 999;
+    .toggle-btn {
+      position: absolute;
+      top: -35px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #0d6efd;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      padding: 5px 15px;
+      cursor: pointer;
     }
     
 </style>
@@ -152,20 +176,27 @@
             </div>
 </section>
 
-    <div class="social-bar d-flex justify-content-center">
-    <a href="https://facebook.com" target="_blank" class="social-icon">
-      <i class="fab fa-facebook-f"></i>
-    </a>
-    <a href="https://twitter.com" target="_blank" class="social-icon">
-      <i class="fab fa-twitter"></i>
-    </a>
-    <a href="https://instagram.com" target="_blank" class="social-icon">
-      <i class="fab fa-instagram"></i>
-    </a>
-    <a href="https://linkedin.com" target="_blank" class="social-icon">
-      <i class="fab fa-linkedin-in"></i>
-    </a>
+
+<div class="social-bar-wrapper">
+    <div class="social-bar" id="socialBar">
+      <button class="toggle-btn" id="toggleBtn">Hide</button>
+      <a href="https://facebook.com" target="_blank" class="social-icon">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://twitter.com" target="_blank" class="social-icon">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://instagram.com" target="_blank" class="social-icon">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://linkedin.com" target="_blank" class="social-icon">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </div>
   </div>
+
+
+    
 
 <footer style="display: flex; justify-content: center; background-color: white; opacity: 0.3;">
          <span style="color: black; " class="fw-bold">DEVELOPED BY <span  style="color: rgb(196, 32, 32);">D</span>HUB STUDIOS...</span>
@@ -201,6 +232,16 @@ ScrollReveal().reveal('.card',{
 });
 
 
+
+
+ const socialBar = document.getElementById('socialBar');
+    const toggleBtn = document.getElementById('toggleBtn');
+
+    toggleBtn.addEventListener('click', () => {
+      socialBar.classList.toggle('hidden');
+      toggleBtn.textContent = socialBar.classList.contains('hidden') ? 'Show' : 'Hide';
+    });
+     
      
  </script>
    
