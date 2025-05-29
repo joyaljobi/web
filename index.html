@@ -22,32 +22,31 @@
   }
 
 
-.social-bar-container {
+
+    .social-bar-wrapper {
       position: fixed;
       bottom: 20px;
       right: 20px;
       display: flex;
       align-items: center;
-      flex-direction: row-reverse; /* Makes button stay on right */
       z-index: 999;
     }
 
     .social-bar {
-      background-color: #ffffff;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
-      padding: 10px 15px 10px 10px;
-      border-radius: 30px;
       display: flex;
-      align-items: center;
       gap: 10px;
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.3s ease;
-      overflow: hidden;
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 30px 0 0 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      transform: translateX(100%);
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
     }
 
     .social-bar.show {
-      transform: scaleX(1);
+      transform: translateX(0);
+      opacity: 1;
     }
 
     .social-icon {
@@ -58,14 +57,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      text-decoration: none;
       color: #333;
       transition: background-color 0.3s, color 0.3s;
-      text-decoration: none;
     }
 
     .social-icon:hover {
       background-color: #0d6efd;
-      color: white;
+      color: #fff;
     }
 
     .toggle-btn {
@@ -75,15 +74,14 @@
       background-color: #0d6efd;
       color: white;
       border: none;
-   
       font-size: 18px;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      margin-left: 10px;
       cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
-
     
     
 </style>
@@ -249,15 +247,15 @@ ScrollReveal().reveal('.card',{
 
 
 
- const socialBar = document.getElementById('socialBar');
+
+       const socialBar = document.getElementById('socialBar');
     const toggleBtn = document.getElementById('toggleBtn');
-    const toggleIcon = toggleBtn.querySelector('i');
+    const icon = toggleBtn.querySelector('i');
 
     toggleBtn.addEventListener('click', () => {
       socialBar.classList.toggle('show');
-      toggleIcon.className = socialBar.classList.contains('show') ? 'fas fa-eye-slash' : 'fas fa-eye';
+      icon.className = socialBar.classList.contains('show') ? 'fas fa-eye-slash' : 'fas fa-eye';
     });
-     
  </script>
    
   
