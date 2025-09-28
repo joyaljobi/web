@@ -149,14 +149,14 @@
 
 
 <section class="py-5 text-center text-white"> 
-  <div class="container"> <h2 class="fw-bold text-warning">PADINJAARU BAGHAM</h2> 
+  <div class="container "> <h2 class="fw-bold text-warning step-box2">PADINJAARU BAGHAM</h2> 
    
      <div class="row g-5"> <!-- Step 1 -->
        <div class="col-md-12"> 
         <div class="step-box"> 
           <div class="circle"></div> 
          
-          <p style="font-family: cursive;">"At St. Mary's Forane Church, Kottekad, our  festival of the Assumption is more than a celebration it's an invitation into faith and fellowship. From solemn Masses and processions to music,
+          <p>"At St. Mary's Forane Church, Kottekad, our  festival of the Assumption is more than a celebration it's an invitation into faith and fellowship. From solemn Masses and processions to music,
              cultural events,  we come together to honor Mary and renew our devotion. 
             All are welcome, join us in joy and worship, and be part of this blessed experience."</p> 
         </div> 
@@ -263,7 +263,7 @@
 const scrollRevealOption = {
   
   distance: "50px",
-  origin: "left",
+  origin: "top",
   duration: 2000,
 
 
@@ -276,12 +276,21 @@ ScrollReveal().reveal('.card',{
      ...scrollRevealOption,
 });
 
-     ScrollReveal().reveal('.nav__links',{
+     ScrollReveal().reveal('.step-box',{
   
      
      ...scrollRevealOption,
-         origin:"left",
-         delay:500,
+         origin:"bottom",
+         delay:600,
+});
+
+
+  ScrollReveal().reveal('.step-box2',{
+  
+     
+     ...scrollRevealOption,
+         origin:"top",
+         delay:300,
 });
 
 
